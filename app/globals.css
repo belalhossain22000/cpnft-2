@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --primary-color-gradient: linear-gradient(330deg, #0047ff 0%, #f07 100%);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Righteous";
+}
+h1 {
+  @apply xl:text-[62px] sm:text-[38px] text-[30px] font-normal text-[#FFF] leading-[50px] xl:leading-[80px];
+}
+h2 {
+  @apply md:text-[48px] text-[30px] font-normal text-[#FFF] leading-[55px];
+}
+h3 {
+  @apply md:text-[38px] text-[25px] font-normal text-[#FFF];
+}
+p,
+h4,
+a {
+  font-family: "Poppins";
+}
+.hoverarow:hover {
+  @apply bg-gradient-to-r from-purple-400 to-pink-600;
+}
+
+.custom-button:hover {
+  /* Use the same background color as specified for the button */
+  background: var(
+    --primary-color-gradient,
+    linear-gradient(330deg, #0047ff 0%, #f07 100%)
+  );
+}
+
+.custom-button-bg {
+  background: var(
+    --primary-color-gradient,
+    linear-gradient(330deg, #0047ff 0%, #f07 100%)
+  );
+  transition: all;
+  transition-duration: 700ms;
+}
+.custom-button-bg:hover {
+  /* Set the background to none when hovering */
+  background: transparent;
+
+  border: 1px solid white;
+  transition: all;
+  transition-duration: 700ms;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
