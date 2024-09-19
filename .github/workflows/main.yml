@@ -3,10 +3,10 @@ name: Next.js CI/CD
 on:
   push:
     branches:
-      - main  # Trigger deployment on push to the main branch
+      - main  
   pull_request:
     branches:
-      - main  # Also run on pull requests to the main branch
+      - main  
 
 jobs:
   build:
@@ -14,12 +14,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3 
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4  
       with:
-        node-version: '18'  # Use Node.js 18, ensure compatibility with your project
+        node-version: '18'  
 
     - name: Install dependencies
       run: npm install
