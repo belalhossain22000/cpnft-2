@@ -1,0 +1,38 @@
+name: Next.js CI/CD
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment on push to the main branch
+  pull_request:
+    branches:
+      - main  # Also run on pull requests to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Use Node.js 18, ensure compatibility with your project
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run lint (optional)
+      run: npm run lint
+
+    - name: Build the project
+      run: npm run build
+
+    - name: Deploy to Vercel
+      run: |
+        npm install -g vercel
+        vercel --prod --token=$VERCEL_TOKEN
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
