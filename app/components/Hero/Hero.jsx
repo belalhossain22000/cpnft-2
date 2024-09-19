@@ -15,7 +15,7 @@ const Hero = () => {
             <div>
 
                 <Reveals>
-                    <h1 className='lg:mt-32 xm:mt-[40px]'>The modern <br />
+                    <h1 className='lg:mt-32 xm:mt-[40px]'>The Wonder <br />
                         world of creative & <br />
                         <span style={{
                             background: 'var(--primary-color-gradient, linear-gradient(330deg, #0047FF 0%, #F07 100%))',
